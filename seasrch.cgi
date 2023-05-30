@@ -126,7 +126,7 @@ sub top_html()
 <p><H1>Таблица записей почтового журнала</H1></p>
 <p>&nbsp;</p>
 <form method="GET">
-<p>Поиск&nbsp;<input type="text" name="search" value="%%search%%" ACTION="/search.cgi" /> <input type="submit" value="Search" /></p>
+<p>Поиск&nbsp;<input type="text" name="search" value="%%search%%" ACTION="/cgi-bin/search.cgi" /> <input type="submit" value="Search" /></p>
 </form>
 	};
 }
