@@ -63,6 +63,9 @@ if ($search ne ''){
 		
 		print incoming_messages();
 		print &begin_table();
+		
+		my $overflow = $#arr_rows >= $LIMIT;
+		pop @arr_rows;
 		### вывод строк таблицы
 		for my $row (@arr_rows){
 			my $timestamp = $row->[0];
@@ -73,7 +76,7 @@ if ($search ne ''){
 			print $s;
 		}
 		print &end_table();
-		if ($#arr_rows >= $LIMIT){
+		if ($overflow){
 			print "<p>количество найденных строк превышает $LIMIT/p>";
 			
 		}
@@ -90,6 +93,9 @@ if ($search ne ''){
 		print other_messages();
 		print &begin_table();
 		
+		my $overflow = $#arr_rows >= $LIMIT;
+		pop @arr_rows;
+		
 		### вывод строк таблицы
 		for my $row (@arr_rows){
 			my $timestamp = $row->[0];
@@ -100,7 +106,7 @@ if ($search ne ''){
 			print $s;
 		}
 		print &end_table();
-		if ($#arr_rows >= $LIMIT){
+		if ($overflow){
 			print "<p>количество найденных строк превышает $LIMIT/p>";
 			
 		}
